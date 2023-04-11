@@ -63,13 +63,22 @@ class BinarySearchTree{
 	    }
 	}
 
-   /*
-   pre-order traversal
-   */
+
+   /**
+    * Recursively prints the pre-order traversal
+    * @param root Node passes the current parent node to the function
+    */
    public void preOrderTraversal(Node root){
-      //implement me
+	   if(root == null) {
+		   return;
+	   }
+	   System.out.print(root.value +",");
+	   preOrderTraversal(root.left);
+	   preOrderTraversal(root.right);
+	   
    }
 
+   
    
    
    /*
