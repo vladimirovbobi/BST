@@ -80,14 +80,18 @@ class BinarySearchTree{
 
    
    
-   
-   /*
-   in-order traversal
-   */
+   /**
+    * Recursively prints the in-order traversal
+    * @param root Node passes the current parent node to the function
+    */
    public void inOrderTraversal(Node root){
-      //implement me
+	   if(root == null) {
+		   return;
+	   }
+	   inOrderTraversal(root.left);
+	   System.out.print(root.value +",");
+	   inOrderTraversal(root.right);
    }
-   
    
    
    /*
