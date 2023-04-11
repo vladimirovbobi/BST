@@ -106,15 +106,28 @@ class BinarySearchTree{
 	   System.out.print(root.value +",");
    }
    
-   
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+
+   /**
+   	* Recursive method to find the node in the tree with a specific value
+   	* @param root Node passes the current node
+   	* @param key int passes the value we are looking for
+   	* @return boolean true/false if the value is found or not
+   	*/
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+	  if(root == null) {
+		  return false;
+	  }
+	  if(root.value == key) {
+		  return true;
+	  }
+	  if(root.value < key) {
+		  return find(root.right,key);
+	  }else {
+		  return find(root.left,key);
+	  }
    }
+   
+   
    
    
    
