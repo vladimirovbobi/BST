@@ -160,11 +160,13 @@ class BinarySearchTree{
    }
    
    
-   
-   /*
-   this method will not compile until getMax
-   is implemented
-   */
+
+   /**
+    * Recursive delete function - removes a Node with specific value
+    * @param root Node passes the current node
+    * @param key int passes the value we want to delete
+    * @return Node to be deleted
+    */
    public Node delete(Node root, int key){
       
       if(root == null){
@@ -196,10 +198,18 @@ class BinarySearchTree{
    
    
 }
+/**
+ * 
+ * Driver class 
+ *
+ */
 
 
-
-public class TreeDemo{
+class TreeDemo{
+/**
+ * Main method
+ * @param args Args
+ */
    public static void main(String[] args){
       BinarySearchTree t1  = new BinarySearchTree();
       t1.insert(24);
@@ -209,9 +219,18 @@ public class TreeDemo{
       t1.insert(90);
       t1.insert(22);
             
-      System.out.print("in-order :   ");
+      System.out.print("in-order : ");
       t1.inOrderTraversal(t1.root);
       System.out.println();
+     
+      System.out.print("post-order : ");
+      t1.postOrderTraversal(t1.root);
+      System.out.println();
+     
+      System.out.print("pre-order : ");
+      t1.preOrderTraversal(t1.root);
+      System.out.println();
+           
            
       
    }  
