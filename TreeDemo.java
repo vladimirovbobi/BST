@@ -93,14 +93,18 @@ class BinarySearchTree{
 	   inOrderTraversal(root.right);
    }
    
-   
-   /*
-   post-order traversal
-   */
+   /**
+    * Recursively prints the post-order traversal
+    * @param root Node passes the current parent node to the function
+    */
    public void postOrderTraversal(Node root){
-      //implement me
+	   if(root == null) {
+		   return;
+	   }
+	   postOrderTraversal(root.left);
+	   postOrderTraversal(root.right);
+	   System.out.print(root.value +",");
    }
-   
    
    
    /*
