@@ -1,7 +1,23 @@
+/**
+ * An implementation of a Binary Search Tree.
+ * <p>
+ * Uses nodes to store the values.
+ * @author Bobi Vladimirov
+ *
+ */
 class Node{
+   /**
+    * variable value to store the value
+    */
    int value;
+   /**
+    * left and right Node to store the reference to the children
+    */
    Node left, right;
-   
+   /**
+    * Constructor of type node with connection to left and right child
+    * @param value Value of the current node 
+    */
    public Node(int value){
       this.value = value;
       left = null;
@@ -9,34 +25,44 @@ class Node{
    }
 
 }
-
+/**
+ * Binary Search Tree
+ */
 class BinarySearchTree{
-
+   /**
+    * root
+    */
    Node root;
    
    
-   /*
-   recursive insert method
-   */
-   public Node insert(Node root, int value){
-      //base case
-      if(root == null){
-         root = new Node(value);
-         return root;
-      }
-      
-      //recursive step
-      if(value < root.value){
-         root.left = insert(root.left, value); 
-      }else{
-         root.right = insert(root.right, value);
-      }
-      
-      return root;
-   }
-   
-   
-   
+   /**
+    * Iterative insert function
+    * @param value  Represents the value to be inserted
+    */
+   public void insert(int value) {
+	    if (root == null) {
+	        root = new Node(value);
+	        return;
+	    }
+	    
+	    Node currentNode = root;
+	    while (true) {
+	        if (value < currentNode.value) {
+	            if (currentNode.left == null) {
+	                currentNode.left = new Node(value);
+	                return;
+	            }
+	            currentNode = currentNode.left;
+	        } else {
+	            if (currentNode.right == null) {
+	                currentNode.right = new Node(value);
+	                return;
+	            }
+	            currentNode = currentNode.right;
+	        }
+	    }
+	}
+
    /*
    pre-order traversal
    */
